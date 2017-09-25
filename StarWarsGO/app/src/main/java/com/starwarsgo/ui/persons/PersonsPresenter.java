@@ -3,8 +3,9 @@ package com.starwarsgo.ui.persons;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import com.google.gson.Gson;
 import com.starwarsgo.data.source.PersonDataSource;
-import com.starwarsgo.model.Person;
+import com.starwarsgo.data.source.domain.model.Person;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
 public class PersonsPresenter implements PersonsContract.Presenter {
 
     private final PersonDataSource mPersonDataSource;
+    public List<Person> personList;
 
     @Nullable
     private PersonsContract.View mPersonsView;
@@ -36,16 +38,22 @@ public class PersonsPresenter implements PersonsContract.Presenter {
 
     private void loadPersons() {
         mPersonDataSource.loadPersons(new PersonDataSource.LoadPersonsCallback() {
+
             @Override
             public void onPersonsLoaded(List<Person> persons) {
+                personList = persons;
                 mPersonsView.showPersons(persons);
             }
 
             @Override
             public void onDataNotAvailable() {
-
+                mPersonsView.showMsgErrorLoadPersons();
             }
         });
     }
 
+    @Override
+    public String getPersonJson(int position) {
+        return new Gson().toJson(personList.get(position));
+    }
 }

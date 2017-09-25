@@ -1,4 +1,4 @@
-package com.starwarsgo;
+package com.starwarsgo.ui;
 
 /**
  * Created by jsantini on 24/09/17.

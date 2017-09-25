@@ -1,11 +1,31 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="tvHeaderDefaultStyle">
+        <item name="android:textSize">@dimen/tv_size_micro</item>
+        <item name="android:textColor">@color/colorLightGray</item>
+    </style>
+
+    <style name="tvDefaultStyle">
+        <item name="android:textSize">@dimen/tv_size_normal</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="btndefault">
+        <item name="android:width">@dimen/bt_size_default_width</item>
+        <item name="android:height">@dimen/bt_size_default_height</item>
+        <item name="android:textSize">@dimen/tv_size_normal</item>
+        <item name="android:background">@drawable/bg_button_default</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
+    <style name="Toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
 </resources>

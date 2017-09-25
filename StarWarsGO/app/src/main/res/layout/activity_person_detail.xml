@@ -1,9 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.starwarsgo.ui.personDetail.PersonDetailActivity">
+    android:orientation="vertical"
+    >
 
-</android.support.constraint.ConstraintLayout>
+    <include
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_double"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tv_size_normal"
+                android:text="Name"
+                style="@style/tvHeaderDefaultStyle"
+                />
+
+            <TextView
+                android:id="@+id/tv_person_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tvDefaultStyle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tv_size_normal"
+                style="@style/tvHeaderDefaultStyle"
+                android:text="Birth Year" />
+
+            <TextView
+                android:id="@+id/tv_person_birth_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tvDefaultStyle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tv_size_normal"
+                style="@style/tvHeaderDefaultStyle"
+                android:text="Height" />
+
+            <TextView
+                android:id="@+id/tv_person_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tvDefaultStyle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tv_size_normal"
+                style="@style/tvHeaderDefaultStyle"
+                android:text="Mass" />
+
+            <TextView
+                android:id="@+id/tv_person_mass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tvDefaultStyle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tv_size_normal"
+                style="@style/tvHeaderDefaultStyle"
+                android:text="Eye Color" />
+
+            <TextView
+                android:id="@+id/tv_person_eye_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tvDefaultStyle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tv_size_normal"
+                style="@style/tvHeaderDefaultStyle"
+                android:text="Hair Color"
+                />
+
+            <TextView
+                android:id="@+id/tv_person_hair_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tvDefaultStyle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tv_size_normal"
+                style="@style/tvHeaderDefaultStyle"
+                android:text="Created" />
+
+            <TextView
+                android:id="@+id/tv_person_created"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tvDefaultStyle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tv_size_normal"
+                style="@style/tvHeaderDefaultStyle"
+                android:text="Edited" />
+
+            <TextView
+                android:id="@+id/tv_person_edited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tvDefaultStyle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tv_size_normal"
+                style="@style/tvHeaderDefaultStyle"
+                android:text="Gender" />
+
+            <TextView
+                android:id="@+id/tv_person_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tvDefaultStyle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tv_size_normal"
+                style="@style/tvHeaderDefaultStyle"
+                android:text="Homeworld" />
+
+            <TextView
+                android:id="@+id/tv_person_homeworld"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tvDefaultStyle"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/tv_size_normal"
+                style="@style/tvHeaderDefaultStyle"
+                android:text="Skin Color" />
+
+            <TextView
+                android:id="@+id/tv_person_skin_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/tvDefaultStyle"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

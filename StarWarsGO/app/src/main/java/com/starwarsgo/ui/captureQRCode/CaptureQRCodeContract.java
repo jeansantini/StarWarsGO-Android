@@ -1,7 +1,7 @@
 package com.starwarsgo.ui.captureQRCode;
 
-import com.starwarsgo.BasePresenter;
-import com.starwarsgo.BaseView;
+import com.starwarsgo.ui.BasePresenter;
+import com.starwarsgo.ui.BaseView;
 
 /**
  * Created by jsantini on 24/09/17.
@@ -16,6 +16,8 @@ public interface CaptureQRCodeContract {
         void showErrorPersonAlreadyExists();
 
         void showSavePersonError();
+
+        String getMsgLoading();
     }
 
     interface Presenter extends BasePresenter<View> {

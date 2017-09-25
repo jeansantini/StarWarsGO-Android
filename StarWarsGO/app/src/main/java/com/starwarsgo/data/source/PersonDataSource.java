@@ -2,7 +2,8 @@ package com.starwarsgo.data.source;
 
 import android.support.annotation.NonNull;
 
-import com.starwarsgo.model.Person;
+import com.starwarsgo.data.source.domain.dto.ResponseGetPersonDTO;
+import com.starwarsgo.data.source.domain.model.Person;
 
 import java.util.List;
 
@@ -12,8 +13,12 @@ import java.util.List;
 
 public interface PersonDataSource {
 
+    interface GenericRequestCallback {
+        void onConnectionError();
+    }
+
     interface SavePersonCallback {
-        void onPersonSaved();
+        void onPersonSaved(Person person);
         void onPersonAlreadyExists();
         void onPersonSaveError();
     }
@@ -25,13 +30,23 @@ public interface PersonDataSource {
         void onDataNotAvailable();
     }
 
-    interface GetPersonCallback {
+    interface LoadPersonCallback extends GenericRequestCallback {
 
         void onPersonLoaded(Person person);
 
         void onDataNotAvailable();
     }
 
+    interface GetPersonCallback extends GenericRequestCallback {
+
+        void onPersonLoaded(ResponseGetPersonDTO dto);
+
+        void onDataNotAvailable();
+    }
+
     void savePerson(@NonNull Person person, @NonNull SavePersonCallback callback);
+
     void loadPersons(@NonNull LoadPersonsCallback callback);
+
+    void getPerson(@NonNull String url, @NonNull LoadPersonCallback callback);
 }

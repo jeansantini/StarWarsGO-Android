@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.starwarsgo.R;
-import com.starwarsgo.model.Person;
+import com.starwarsgo.data.source.domain.model.Person;
 import com.starwarsgo.ui.persons.viewHolder.PersonsViewHolder;
 
 import java.util.List;
@@ -36,11 +36,12 @@ public class PersonsAdapter extends RecyclerView.Adapter<PersonsViewHolder> {
     public void onBindViewHolder(PersonsViewHolder holder, final int position) {
         final Person person = persons.get(position);
         holder.tvItemUrl.setText(person.getUrl());
+        holder.tvItemName.setText(person.getName());
         if(mPersonClickListener != null) {
             holder.llItemContent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mPersonClickListener.personClick(position);
+                    mPersonClickListener.personClick(person.getUrl());
                 }
             });
         }
@@ -64,6 +65,6 @@ public class PersonsAdapter extends RecyclerView.Adapter<PersonsViewHolder> {
     }
 
     public interface PersonClickListener {
-        void personClick(int position);
+        void personClick(String url);
     }
 }

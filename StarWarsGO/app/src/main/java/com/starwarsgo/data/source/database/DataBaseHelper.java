@@ -6,7 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
-import com.starwarsgo.model.Person;
+import com.starwarsgo.data.source.domain.model.Person;
+import com.starwarsgo.data.source.domain.model.PersonFilm;
 import com.starwarsgo.util.Constants;
 
 /**
@@ -24,6 +25,8 @@ public class DataBaseHelper<E> extends OrmLiteSqliteOpenHelper {
     public void onCreate(SQLiteDatabase database, ConnectionSource connectionSource) {
         try {
             TableUtils.createTable(connectionSource, Person.class);
+            TableUtils.createTable(connectionSource, PersonFilm.class);
+
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -33,6 +36,7 @@ public class DataBaseHelper<E> extends OrmLiteSqliteOpenHelper {
     public void onUpgrade(SQLiteDatabase database, ConnectionSource connectionSource, int oldVersion, int newVersion) {
         try {
             TableUtils.dropTable(connectionSource, Person.class, true);
+            TableUtils.dropTable(connectionSource, PersonFilm.class, true);
         }catch (Exception e){
             e.printStackTrace();
         }

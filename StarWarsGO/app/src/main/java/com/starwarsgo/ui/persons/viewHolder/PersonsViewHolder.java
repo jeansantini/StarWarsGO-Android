@@ -19,6 +19,9 @@ public class PersonsViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.ll_item_content)
     public LinearLayout llItemContent;
 
+    @BindView(R.id.tv_item_name)
+    public TextView tvItemName;
+
     @BindView(R.id.tv_item_url)
     public TextView tvItemUrl;
 
